@@ -110,7 +110,7 @@ function gameScreen() {
         `<div class="row align-items-center justify-content-center statfont">
             <div class="col-4 pl-4">
                 <p class="statfont mb-0">total cheese modifier:</p>
-                <p class="numfont">${tcm}</p>
+                <p class="numfont text-center">${tcm}</p>
             </div>
             <div class="col-4">
                 <button class="bg-transparent border-0" onclick="mine()">
@@ -120,12 +120,12 @@ function gameScreen() {
     </div>
                 <div class="col-4">
                     <p class="statfont mb-0">cheese per second:</p>
-                    <p class="numfont"> ${cps}</p>
+                    <p class="numfont text-center"> ${cps}</p>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-7">
-                    <div class="panel panel-default rounded bg-light ml-2">
+                    <div class="panel panel-default rounded bg-light ml-3">
                         <div class="panel-body p-3 text-center">
                             <div class="row justify-content-center title">
                                 <p class="storefont minmarg">STORE (UPGRADES)</p>
@@ -231,19 +231,21 @@ function gameScreen() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-5">
                                     <div class="panel panel-default rounded bg-light">
-                                        <div class="panel-body p-3 text-center">
-                                            <div class="row justify-content-center">
-                                                <p>INVENTORY</p>
-                                            </div>
-                                            <div class="row">
+                                        <div class="panel-body p-3 text-center padleft">
+                                            <div class="row justify-content-center title">
+                                                <p class="storefont minmarg">INVENTORY</p>
+                                            </div> <hr />
+                                            <div class="row storenum">
                                                 <div class="col-8">
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
-                                                            <p>item</p>
+                                                            <p class="minmarg mt-0 storefont">item</p>
                                                         </span>
                                                     </div>
+
+
                                                     <div class="row">
                                                         <span>
                                                             <p>pick axes</p>
@@ -266,27 +268,27 @@ function gameScreen() {
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
-                                                            <p>quantity</p>
+                                                            <p class="minmarg mt-0 storefont">quantity</p>
                                                         </span>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
                                                             <p>${pano}</p>
                                                         </span>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
                                                             <p>${cano}</p>
                                                         </span>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
                                                             <p>${rono}</p>
                                                         </span>
                                                     </div>
-                                                    <div class="row">
+                                                    <div class="row justify-content-center">
                                                         <span>
                                                             <p>${mbno}</p>
                                                         </span>

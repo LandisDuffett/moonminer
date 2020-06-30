@@ -58,6 +58,9 @@ hr {
 .numfont {
     color: lightgoldenrodyellow
 }
+.padleft {
+    padding-left: 0.25rem!important;
+}
 .panelmargin {
    margin: 2rem;
 }
@@ -81,7 +84,7 @@ hr {
 }
 
 .storefont {
-    font-size: 0.5rem;
+    font-size: 0.5rem!important;
 }
 
 .storenum {
