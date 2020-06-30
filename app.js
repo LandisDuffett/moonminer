@@ -108,176 +108,174 @@ function gameScreen() {
     let gameTemplate = ""
     gameTemplate +=
         `<div class="row align-items-center justify-content-center statfont">
-    <div class="col-4 pl-4">
-        <p class="statfont mb-0">total cheese modifier:</p>
-        <p class="numfont text-center">${tcm}</p>
-    </div>
-    <div class="col-4">
-        <button class="bg-transparent border-0" onclick="mine()">
-            <p class="statfont mb-0">cheese:</p>
-            <p class="numfont mb-1">${totch}</p><img class="moon" src="moon.png" alt="">
+            <div class="col-4 pl-4">
+                <p class="statfont mb-0">total cheese modifier:</p>
+                <p class="numfont text-center">${tcm}</p>
+            </div>
+            <div class="col-4">
+                <button class="bg-transparent border-0" onclick="mine()">
+                    <p class="statfont mb-0">cheese:</p>
+                    <p class="numfont mb-1">${totch}</p><img class="moon" src="moon.png" alt="">
         </button>
     </div>
-    <div class="col-4">
-        <p class="statfont mb-0">cheese per second:</p>
-        <p class="numfont text-center"> ${cps}</p>
-    </div>
-</div>
-<div class="row justify-content-center m-2">
-    <div class="col-12">
-        <div class="panel panel-default rounded bg-light">
-            <div class="panel-body p-3 text-center">
-                <div class="row justify-content-center title">
-                    <p class="storefont minmarg">STORE (UPGRADES)</p>
-                </div>
-                <hr />
-                <div class="row storefont">
-                    <div class="col-6">
-                        <div class="row justify-content-center">
-                            <span>
-                                <p class="minmarg mt-0">ITEM</p>
-                            </span>
-                        </div>
-                        <div class="row mb-2">
-                            <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
-                                <span class="tiny">
-                                    <p class="mb-0">pick axe<img src="pick-axe.svg" class="svg" alt="">x2</p>
-
-                                </span>
-                            </button>
-                        </div>
-                        <div class="row mb-2">
-                            <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
-                                <span class="tiny">
-                                    <p class="mb-0">cart<img
-                                            src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg"
-                                            alt="">x5</p>
-
-                                </span>
-                            </button>
-
-                        </div>
-                        <div class="row mb-2">
-                            <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
-                                <span class="tiny">
-                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x20</p>
-
-                                </span>
-                            </button>
-
-                        </div>
-                        <div class="row mb-2">
-                            <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
-                                <span class="tiny">
-                                    <p class="mb-0"><img src="mbot.png" class="svg2" alt="">x100</p>
-
-                                </span>
-                            </button>
-
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row justify-content-center margleft">
-                            <span>
-                                <p class="mb-1">PRICE</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p class="storenum1">${paprice}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p class="storenum2">${caprice}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p class="storenum3">${roprice}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p class="storenum4">${mbprice}</p>
-                            </span>
-                        </div>
-                    </div>
+                <div class="col-4">
+                    <p class="statfont mb-0">cheese per second:</p>
+                    <p class="numfont text-center"> ${cps}</p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="row justify-content-center m-2">
-    <div class="col-12">
-        <div class="panel panel-default rounded bg-light">
-            <div class="panel-body p-3 text-center padleft">
-                <div class="row justify-content-center title">
-                    <p class="storefont minmarg">INVENTORY</p>
-                </div>
-                <hr />
-                <div class="row storefont">
-                    <div class="col-8">
-                        <div class="row justify-content-between">
-                            <span>
-                                <p class="minmarg mt-0">ITEM</p>
-                            </span>
+            <div class="row justify-content-center m-2">
+                <div class="col-12">
+                    <div class="panel panel-default rounded bg-light">
+                        <div class="panel-body p-3 text-center">
+                            <div class="row justify-content-center title">
+                                <p class="storefont minmarg">STORE (UPGRADES)</p>
+                            </div>
+                            <div class="row storefont">
+                                <div class="col-7">
+                                    <div class="row justify-content-center">
+                                        <span>
+                                            <p class="minmarg mt-0">ITEM</p>
+                                        </span>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
+                                            <span class="tiny">
+                                                <p>pick axe<img src="pick-axe.svg" class="svg" alt="">x2</p>
+
+                                </span>
+                            </button>
                         </div>
+                                        <div class="row mb-2">
+                                            <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
+                                                <span class="tiny">
+                                                    <p class="mb-0">cart<img
+                                                        src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg"
+                                                        alt="">x5</p>
+
+                                </span>
+                            </button>
+
+                        </div>
+                                            <div class="row mb-2">
+                                                <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
+                                                    <span class="tiny">
+                                                        <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x20</p>
+
+                                </span>
+                            </button>
+
+                        </div>
+                                                <div class="row mb-2">
+                                                    <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
+                                                        <span class="tiny">
+                                                            <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">x100</p>
+
+                                </span>
+                            </button>
+
+                        </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row justify-content-center margleft">
+                                                        <span>
+                                                            <p class="mb-1">PRICE</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="storenum1">${paprice}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="storenum2">${caprice}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="storenum3">${roprice}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="storenum4">${mbprice}</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center m-2">
+                                <div class="col-12">
+                                    <div class="panel panel-default rounded bg-light">
+                                        <div class="panel-body p-3 text-center padleft">
+                                            <div class="row justify-content-center title">
+                                                <p class="storefont minmarg">INVENTORY</p>
+                                            </div>
+                                            <div class="row storefont">
+                                                <div class="col-8">
+                                                    <div class="row justify-content-between">
+                                                        <span>
+                                                            <p class="minmarg mt-0">ITEM</p>
+                                                        </span>
+                                                    </div>
 
 
-                        <div class="row">
-                            <span>
-                                <p>pick axes</p>
-                            </span>
-                        </div>
-                        <div class="row">
-                            <span>
-                                <p>carts</p>
-                            </span>
-                        </div>
-                        <div class="row">
-                            <span>
-                                <p>rovers</p>
-                            </span>
-                        </div>
-                        <div class="row">
-                            <span>
-                                <p>mousebots</p>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row justify-content-center">
-                            <span class="pr-3">
-                                <p class="minmarg mt-0">QUANTITY</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p>${pano}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p>${cano}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p>${rono}</p>
-                            </span>
-                        </div>
-                        <div class="row justify-content-center">
-                            <span>
-                                <p>${mbno}</p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>`
+                                                    <div class="row">
+                                                        <span>
+                                                            <p class="mb-0" >pick axes</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <span>
+                                                            <p class="mb-0">carts</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <span>
+                                                            <p class="mb-0">rovers</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <span>
+                                                            <p class="mb-0">mousebots</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="row justify-content-center">
+                                                        <span class="pr-3">
+                                                            <p class="minmarg mt-0">QUANTITY</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="mb-0">${pano}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="mb-0">${cano}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="mb-0">${rono}</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <span>
+                                                            <p class="mb-0">${mbno}</p>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
     document.getElementById("insertion").innerHTML = gameTemplate;
 }
 
