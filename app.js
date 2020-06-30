@@ -134,7 +134,7 @@ function gameScreen() {
                                 <div class="col-6">
                                     <div class="row justify-content-center">
                                         <span>
-                                            <p class="minmarg mt-0">item</p>
+                                            <p class="minmarg mt-0">ITEM</p>
                                         </span>
                                     </div>
                                     <div class="row mb-2">
@@ -176,7 +176,7 @@ function gameScreen() {
                                                 <div class="col-4">
                                                     <div class="row justify-content-center margleft">
                                                         <span>
-                                                            <p class="mb-1">price</p>
+                                                            <p class="mb-1">PRICE</p>
                                                         </span>
                                                     </div>
                                                     <div class="row justify-content-center">
@@ -212,9 +212,9 @@ function gameScreen() {
                                             </div> <hr />
                                             <div class="row storefont">
                                                 <div class="col-8">
-                                                    <div class="row justify-content-center">
+                                                    <div class="row justify-content-between">
                                                         <span>
-                                                            <p class="minmarg mt-0">item</p>
+                                                            <p class="minmarg mt-0">ITEM</p>
                                                         </span>
                                                     </div>
 
@@ -242,8 +242,8 @@ function gameScreen() {
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="row justify-content-center">
-                                                        <span>
-                                                            <p class="minmarg mt-0">quantity</p>
+                                                        <span class="pr-3">
+                                                            <p class="minmarg mt-0">QUANTITY</p>
                                                         </span>
                                                     </div>
                                                     <div class="row justify-content-center">
