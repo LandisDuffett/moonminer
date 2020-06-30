@@ -1,0 +1,56 @@
+.banner {
+  font-family: 'Notable', sans-serif; 
+  color: lightblue;
+  font-size: 1.5rem;
+}
+
+body {
+  background-image: url("stars.jpg");
+  background-repeat: no-repeat;
+  color: purple;
+  font-weight: bold;
+}
+
+.control-buttons {
+  font-family: 'Notable', sans-serif;
+  justify-content: center;
+}
+
+.moon {
+  max-width: 30vw; 
+  max-height: 30vh; 
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mouse {
+   display: none;
+}
+
+.panelmargin {
+   margin: 2rem;
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+.banner {
+  font-size: 4em;
+}
+
+.mouse {
+    display: block;
+    max-height: 6rem;
+    max-width: 7rem;
+}
+
+.panelmargin {
+    margin: 4rem;
+}
+}
+
+@media (min-width: 992px) {
+
+}
