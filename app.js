@@ -107,11 +107,9 @@ function nameScreen() {
 function gameScreen() {
     let gameTemplate = ""
     gameTemplate +=
-        `<div class="row align-items-center justify-content-center">
+        `<div class="row align-items-center justify-content-center statfont">
             <div class="col-4">
-                <div class="row">
-                    <p>CPS(Cheese per second, automatic): ${cps}</p>
-                </div>
+                    <p>Cheese per second: ${cps}</p>
             </div>
             <div class="col-4">
                 <button class="bg-transparent border-0" onclick="mine()">
@@ -119,9 +117,7 @@ function gameScreen() {
         </button>
     </div>
                 <div class="col-4">
-                    <div class="row">
-                        <p>TCM(Total cheese modifier, on click): ${tcm}</p>
-                    </div>
+                        <p>Total cheese modifier: ${tcm}</p>
                 </div>
             </div>
             <div class="row">
