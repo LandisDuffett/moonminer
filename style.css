@@ -135,6 +135,13 @@ hr {
     padding-right: 0.5rem;
 }
 
+.svg2 {
+    max-height: 6vh;
+    max-width: 7vw;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 .tiny {
     font-size: 0.5rem;
     padding: 0!important;
