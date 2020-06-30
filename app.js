@@ -140,7 +140,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                             <span class="tiny">
-                                                <p class="mb-0">pick axe<img src="pick-axe.svg" class="svg" alt=""></p>
+                                                <p class="mb-0">pick axe<img src="pick-axe.svg" class="svg" alt="">x2</p>
                                                 
                                             </span>
                             </button>
@@ -148,7 +148,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">cart<img src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg" alt=""></p>
+                                                    <p class="mb-0">cart<img src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg" alt="">x5</p>
                                                 
                                             </span>
                             </button>
@@ -157,7 +157,7 @@ function gameScreen() {
                                             <div class="row mb-2">
                                                 <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
                                                     <span class="tiny">
-                                                        <p class="mb-0">rover<img src="rover.png" class="svg" alt=""></p>
+                                                        <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x20</p>
                                                 
                                             </span>
                             </button>
@@ -166,14 +166,14 @@ function gameScreen() {
                                                 <div class="row mb-2">
                                                     <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
                                                         <span class="tiny">
-                                                            <p class="mb-0">mousebot<img src="mbot.png" class="svg" alt=""></p>
+                                                            <p class="mb-0"><img src="mbot.png" class="svg" alt="">x100</p>
                                                 
                                             </span>
                             </button>
                                                        
                         </div>
                                                 </div>
-                                                <div class="col-3">
+                                                <div class="col-4">
                                                     <div class="row justify-content-center margleft">
                                                         <span>
                                                             <p class="mb-1">price</p>
@@ -181,7 +181,7 @@ function gameScreen() {
                                                     </div>
                                                     <div class="row justify-content-center">
                                                         <span>
-                                                            <p class="storenum">${paprice}</p>
+                                                            <p class="storenum1">${paprice}</p>
                                                         </span>
                                                     </div>
                                                     <div class="row justify-content-center">
@@ -200,48 +200,21 @@ function gameScreen() {
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-3">
-                                                    <div class="row justify-content-center margleft">
-                                                        <span>
-                                                            <p class="mb-1">modifier</p>
-                                                        </span>
-                                                    </div>
-                                                    <div class="row justify-content-center">
-                                                        <span>
-                                                            <p class="storenum">${pamod}</p>
-                                                        </span>
-                                                    </div>
-                                                    <div class="row justify-content-center">
-                                                        <span>
-                                                            <p class="storenum2">${camod}</p>
-                                                        </span>
-                                                    </div>
-                                                    <div class="row justify-content-center">
-                                                        <span>
-                                                            <p class="storenum3">${romod}</p>
-                                                        </span>
-                                                    </div>
-                                                    <div class="row justify-content-center">
-                                                        <span>
-                                                            <p class="storenum4">${mbmod}</p>
-                                                        </span>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    <div class="panel panel-default rounded bg-light">
+                                    <div class="panel panel-default rounded bg-light mr-2">
                                         <div class="panel-body p-3 text-center padleft">
                                             <div class="row justify-content-center title">
                                                 <p class="storefont minmarg">INVENTORY</p>
                                             </div> <hr />
-                                            <div class="row storenum">
+                                            <div class="row storefont">
                                                 <div class="col-8">
                                                     <div class="row justify-content-center">
                                                         <span>
-                                                            <p class="minmarg mt-0 storefont">item</p>
+                                                            <p class="minmarg mt-0">item</p>
                                                         </span>
                                                     </div>
 
@@ -270,7 +243,7 @@ function gameScreen() {
                                                 <div class="col-4">
                                                     <div class="row justify-content-center">
                                                         <span>
-                                                            <p class="minmarg mt-0 storefont">quantity</p>
+                                                            <p class="minmarg mt-0">quantity</p>
                                                         </span>
                                                     </div>
                                                     <div class="row justify-content-center">

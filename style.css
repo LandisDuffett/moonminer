@@ -94,25 +94,33 @@ hr {
     margin-left: 0.6rem;
 }
 
+.storenum1 {
+    margin-top: 0.6rem;
+    font-size: 0.5rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+}
+
 .storenum2 {
-    margin-top: 0.5rem;
-     font-size: 0.9rem;
+    margin-top: 1rem;
+    font-size: 0.5rem;
     justify-content: center;
     margin-left: 0.6rem;
 }
 
 .storenum3 {
-    margin-top: 0.33rem;
-     font-size: 0.9rem;
+    margin-top: 1.1rem;
+    font-size: 0.5rem;
     justify-content: center;
     margin-left: 0.6rem;
 }
 .storenum4 {
-    margin-top: 0.24rem;
-    font-size: 0.9rem;
+    margin-top: 1rem;
+    font-size: 0.5rem;
     justify-content: center;
     margin-left: 0.6rem;
 }
+
 .sub {
     margin-top: 0.7rem;
 }
@@ -121,6 +129,7 @@ hr {
     max-height: 3vh;
     max-width: 3vw;
     margin-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .tiny {
