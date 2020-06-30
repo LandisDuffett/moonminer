@@ -164,7 +164,7 @@ function gameScreen() {
                                                     
                         </div>
                                                 <div class="row mb-2">
-                                                    <button class="btn btn-info rounded smallbutton mr-1 mbot" onclick="buyMousebot()">
+                                                    <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
                                                         <span class="tiny">
                                                             <p class="mb-0">mousebot<img src="mbot.png" class="svg" alt=""></p>
                                                 
