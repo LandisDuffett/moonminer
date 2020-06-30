@@ -27,6 +27,20 @@ button:focus, .btn.focus, .btn:focus {
     font-size: 0.6rem;
     margin-bottom: 0.2rem;
 }
+
+hr { 
+    width:100%; 
+    height:0.1px; 
+    background: #000;
+    margin: 1; 
+}
+
+.margleft {
+    margin-left: 0;
+}
+.minmarg {
+    margin: 0.2rem;
+}
 .moon {
   max-width: 30vw; 
   max-height: 30vh; 
@@ -38,18 +52,85 @@ button:focus, .btn.focus, .btn:focus {
    display: none;
 }
 
+.mbot {
+    padding-left: 0.1rem;
+}
+.numfont {
+    color: lightgoldenrodyellow
+}
 .panelmargin {
    margin: 2rem;
 }
 
+.smallbutton {
+  border-radius: 3%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.15rem;
+  min-width: 90%;
+  max-height: 4vh;
+  justify-content: space-around;
+  padding-bottom: 1.3rem;
+  margin-left: 0.5rem;
+  border: solid black 1px;
+}
+
 .statfont {
-    color: white;
+    color: lightseagreen;
     font-size: 1rem;
+    font-family: 'Notable', sans-serif; 
+}
+
+.storefont {
+    font-size: 0.5rem;
+}
+
+.storenum {
+    margin-top: 0.45rem;
+    font-size: 0.9rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+}
+
+.storenum2 {
+    margin-top: 0.5rem;
+     font-size: 0.9rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+}
+
+.storenum3 {
+    margin-top: 0.33rem;
+     font-size: 0.9rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+}
+.storenum4 {
+    margin-top: 0.24rem;
+    font-size: 0.9rem;
+    justify-content: center;
+    margin-left: 0.6rem;
 }
 .sub {
     margin-top: 0.7rem;
 }
 
+.svg {
+    max-height: 3vh;
+    max-width: 3vw;
+    margin-left: 0.5rem;
+}
+
+.tiny {
+    font-size: 0.7rem;
+    padding: 0!important;
+    padding-bottom: 1rem!important;
+    align-items: center;
+  }
+
+.title {
+    font-weight: bold;
+    color: black;
+}
 @media (min-width: 576px) {
 
 }
