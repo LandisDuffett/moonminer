@@ -25,13 +25,13 @@ let autoUpgrades = {
 
 };
 
-let timerem = 0;
-let minrem = Math.floor(timerem / 60)
-let secrem = timerem % 60
-let totmin = 0;
-let totsec = 0;
+//let timerem = 0;
+//let minrem = Math.floor(timerem / 60)
+//let secrem = timerem % 60
+//let totmin = 0;
+//let totsec = 0;
 let totch = 990;
-let chgoal = 0;
+//let chgoal = 0;
 let pano = clickUpgrades.pickaxes.quantity;
 let cano = clickUpgrades.carts.quantity;
 let rono = autoUpgrades.rovers.quantity;
@@ -47,9 +47,9 @@ let caprice = clickUpgrades.carts.price;
 let roprice = autoUpgrades.rovers.price;
 let mbprice = autoUpgrades.mousebots.price;
 let collectionInterval = 0;
-let currentPlayer = {}
+//let currentPlayer = {}
 
-function welcomeScreen() {
+/*function welcomeScreen() {
     let welcomeTemplate = ""
     welcomeTemplate +=
         `<div class="row">
@@ -72,9 +72,9 @@ function welcomeScreen() {
         </div>`
     document.getElementById("insertion").innerHTML = welcomeTemplate;
     document.getElementById("large").innerHTML = welcomeTemplate;
-}
+}*/
 
-function nameScreen() {
+/*function nameScreen() {
     let nameTemplate = ""
     nameTemplate +=
         `<div class="row justify-content-center align-items-center">
@@ -109,15 +109,15 @@ function nameScreen() {
 </div>`
     document.getElementById("insertion").innerHTML = nameTemplate;
     document.getElementById("large").innerHTML = nameTemplate;
-}
+}*/
 
 function gameScreen() {
-    let playerNameElem = document.getElementById("currentPlayer")
-    let minElem = document.getElementById("timeremmin")
-    let secElem = document.getElementById("timeremsec")
-    let gameTemplate = ""
+    //let playerNameElem = document.getElementById("currentPlayer")
+    //let minElem = document.getElementById("timeremmin")
+    //let secElem = document.getElementById("timeremsec")
+    //let gameTemplate = ""
     let gameTemplateLarge = ""
-    gameTemplate +=
+    /*gameTemplate +=
         `<div class="row align-items-center justify-content-center statfont">
             <div class="col-4 pl-4">
                 <div class="row text-center justify-content-center">
@@ -304,7 +304,7 @@ function gameScreen() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>`
+                            </div>`*/
     gameTemplateLarge +=
         `<div class="row">
             <div class="col-4">
@@ -406,7 +406,7 @@ function gameScreen() {
                                                 <p class="statfont mb-0 ml-4 mt-0">goal:</p>
                                             </div>
                                             <div class="row justify-content-center">
-                                                <p class="numfont cheese">${chgoal}</p>
+                                                <p class="numfont cheese">0</p>
                                             </div>
                                         </div>
                                         <div class="col-3">
@@ -491,12 +491,12 @@ function gameScreen() {
                                     </div>
                                 </div>
                             </div>`
-    startInterval()
+    perSecond()
     calcMultiplier()
-    minElem.innerText = minrem
-    secElem.innerText = secrem
-    playerNameElem.innerText = currentPlayer.name
-    document.getElementById("insertion").innerHTML = gameTemplate;
+    //minElem.innerText = minrem
+    //secElem.innerText = secrem
+    //playerNameElem.innerText = currentPlayer.name
+    /*document.getElementById("insertion").innerHTML = gameTemplate;*/
     document.getElementById("large").innerHTML = gameTemplateLarge;
 }
 
@@ -524,7 +524,7 @@ function buyPickAxe() {
         } else {
             clickUpgrades.pickaxes.price = paprice * pano;
             paprice = clickUpgrades.pickaxes.price;
-            update();
+            gameScreen();
         }
     }
 }
@@ -540,7 +540,7 @@ function buyCart() {
         } else {
             clickUpgrades.carts.price = caprice * cano;
             caprice = clickUpgrades.carts.price;
-            update();
+            gameScreen();
         }
     }
 }
@@ -556,7 +556,7 @@ function buyRover() {
         } else {
             autoUpgrades.rovers.price = roprice * rono;
             roprice = autoUpgrades.rovers.price;
-            update();
+            gameScreen();
         }
     }
 }
@@ -572,7 +572,7 @@ function buyMousebot() {
         } else {
             autoUpgrades.mousebots.price = mbprice * mbno;
             mbprice = autoUpgrades.mousebots.price;
-            update();
+            gameScreen();
         }
     }
 }
@@ -600,10 +600,10 @@ function calcMultiplier() {
     tcm = 1 + (pano * pamod) + (cano * camod)
 }
 
-let players = []
-loadPlayers()
+//let players = []
+//loadPlayers()
 
-function setPlayer(event) {
+/*function setPlayer(event) {
     event.preventDefault()
     let playerScoreElem = document.getElementById("top-score")
     let form = event.target
@@ -642,29 +642,29 @@ function setPlayer(event) {
 
     document.getElementById("insertion").innerHTML = nameTemplate;
     document.getElementById("large").innerHTML = nameTemplate;
-}
+}*/
 
-function savePlayers() {
+/*function savePlayers() {
     window.localStorage.setItem("players", JSON.stringify(players))
-}
+}*/
 
-function loadPlayers() {
+/*function loadPlayers() {
     let playersData = JSON.parse(window.localStorage.getItem("players"))
     if (playersData) {
         players = playersData
     }
-}
+}*/
 
-function stopGame() {
+/*function stopGame() {
     if (totch > currentPlayer.topScore) {
         currentPlayer.topScore = totch
         savePlayers()
     }
     cheese = 0
     closeScreen()
-}
+}*/
 
-function closeScreen() {
+/*function closeScreen() {
     let closeTemplate = ""
     let highScoreTemplate = ""
     closeTemplate +=
@@ -700,7 +700,9 @@ function closeScreen() {
     })
     document.getElementById("insertion").innerHTML = closeTemplate1;
     document.getElementById("players").innerHTML = highScoreTemplate;
-}
+}*/
 
 
-welcomeScreen()
+//welcomeScreen()
+startInterval()
+gameScreen()
