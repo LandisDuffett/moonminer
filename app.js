@@ -314,7 +314,7 @@ function gameScreen() {
                                 <div class="row mb-2">
                                     <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                         <span class="tiny">
-                                            <p>pick axe<img src="pick-axe.svg" class="svg" alt="">x2</p>
+                                            <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">x 2</p>
 
                                 </span>
                             </button>
@@ -324,7 +324,7 @@ function gameScreen() {
                                             <span class="tiny">
                                                 <p class="mb-0">cart<img
                                                     src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg"
-                                                    alt="">x5</p>
+                                                    alt="">x 5</p>
 
                                 </span>
                             </button>
@@ -333,7 +333,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x20</p>
+                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x 20</p>
 
                                 </span>
                             </button>
@@ -342,7 +342,7 @@ function gameScreen() {
                                             <div class="row mb-2">
                                                 <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
                                                     <span class="tiny">
-                                                        <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">x100</p>
+                                                        <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">x 100</p>
 
                                 </span>
                             </button>

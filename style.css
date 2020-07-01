@@ -44,10 +44,11 @@ hr {
 }
 
 .minhigh {
-    min-height: 75vh;
+    min-height: 35vh;
     max-width: 90%;
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-top: 6rem;
 }
 .minmarg {
     margin: 0.2rem;
@@ -233,4 +234,14 @@ main#insertion {
     font-size: 3rem;
 }
 
+.svg3 {
+    max-height: 5vh;
+    max-width: 5vh;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.tiny {
+    padding-left: 0;
+}
 }
