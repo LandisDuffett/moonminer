@@ -115,10 +115,14 @@ function gameScreen() {
             <div class="col-4 pl-4">
                 <div class="row text-center justify-content-center">
                     <p class="statfont mb-0">total cheese modifier:</p>
+                    </div>
+                    <div class="row justify-content-center">
                     <p class="numfont">${tcm}</p>
                 </div>
                 <div class="row text-center justify-content-center">
                     <p class="statfont mb-0">cheese per second:</p>
+                    </div>
+                    <div class="row justify-content-center">
                     <p class="numfont text-center"> ${cps}</p>
                 </div>
             </div>
@@ -129,13 +133,13 @@ function gameScreen() {
         </button>
     </div>
                 <div class="col-4 space-around">
-                    <div class="row align-items-center">
+                    <div class="row justify-content-center">
                         <p class="statfont mb-0 ml-2">cheese:</p>
                         </div>
                         <div class="row justify-content-center">
-                        <p class="numfont cheese">${totch}</p>
+                        <p class="numfont cheese cheesebot">${totch}</p>
                     </div>
-                    <div class="row text-center">
+                    <div class="row justify-content-center">
                         <p class="statfont mb-0 ml-4">goal:</p>
                         </div>
                         <div class="row justify-content-center">
