@@ -46,16 +46,17 @@
                         </span>
                     </div>
                     <div class="row">
-                        <span class="headerfont" id="timerem"></span>
+                        <span class="headerfont" id="minrem"></span><span class="headerfont">:</span><span
+                            class="headerfont" id="secrem"></span>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="row control-buttons">
-                <button class="btn btn-light border p-1">Directions
+                <button class="btn btn-light border p-1" onclick="getDirections()">Directions
                 </button>
-                <button class="btn btn-light border p-1">New Game</button>
-                <button class="btn btn-light border p-1">Quit</button>
+                <button class="btn btn-light border p-1" onclick="window.location.reload()">New Game</button>
+                <button class="btn btn-light border p-1" onclick="stopGame()">Quit</button>
             </div>
         </header>
         <main id="insertion">
@@ -72,19 +73,67 @@
                         <b>SHOCK WORKERS (High Scores)</b></h1>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-6">
+                    <div class="col-4 ml-4">
                         <span>
-                            <h2>PLAYERS</h2>
+                            <h2><b>PLAYERS</b></h2>
                         </span>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4 mr-4">
                         <span>
-                            <h2>SCORE</h2>
+                            <h2><b>SCORE</b></h2>
                         </span>
                     </div>
                 </div>
                 <div id="players">
 
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default rounded bg-light panelmargin" id="direct">
+            <div class="panel-body p-3">
+                <div class="row justify-content-center">
+                    <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: firebrick">
+                        <b>MOON MINER</b></h1>
+                </div>
+                <div class="row">
+                    <ol>
+                        <li>Mining: To start mining, click anywhere on the moon. To begin with, you will yield one
+                            portion
+                            of
+                            cheese for every click.</li>
+                        <li>Upgrading: Once you have enough cheese, you can use the cheese to purchase equipment. Each
+                            piece
+                            of equipment will increase
+                            your yield by a specified amount:
+                            <ul>
+                                <li>Pick axes increase your yield by 1 portion for each pick axe on each click.</li>
+                                <li>Carts increase your yield by 5 portions for each cart on each click.</li>
+                                <li>Rovers and mousebots are automated machines and so will increase your yield
+                                    automatically every 3
+                                    seconds:
+                                    <ul>
+                                        <li>rovers increase your yield by 20 every 3 seconds</li>
+                                        <li>mousebots increase your yield by 100 every 3 seconds</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li>Time: To begin with, you have 3 minutes to reach your first goal: mine 5000 portions of
+                            cheese.
+                            If you reach your goal before time runs out, you are
+                            awarded an extra 3 minutes. This process is repeated for the rest of the game. Keep in mind
+                            that
+                            while the time bonus is always 3 minutes, your goal will
+                            increase by a factor of 10 each time a time bonus is awarded. If your time runs out before
+                            you
+                            reach
+                            the next goal, the game is over.</li>
+                    </ol>
+                </div>
+                <div class="row justify-content-center">
+                    <button class="btn btn-danger rounded mt-4" onclick="removeDirections()">Close</button>
                 </div>
             </div>
         </div>

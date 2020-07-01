@@ -26,9 +26,10 @@ let autoUpgrades = {
 };
 
 let scoreboard = document.getElementById("here")
-let timerem = 8000;
-let minrem = Math.floor(timerem / 60000)
-let secrem = timerem % 60000
+let directions = document.getElementById("direct")
+let timerem = 10000;
+let minrem = 0
+let secrem = 0
 let clockId = 0
 let totmin = 0;
 let totsec = 0;
@@ -55,6 +56,7 @@ let big = document.getElementById("large")
 
 function welcomeScreen() {
     scoreboard.classList.add("hidden")
+    directions.classList.add("hidden")
     let welcomeTemplate = ""
     welcomeTemplate +=
         `<div class="row">
@@ -79,6 +81,21 @@ function welcomeScreen() {
     document.getElementById("large").innerHTML = welcomeTemplate;
 }
 
+function getDirections() {
+    debugger
+    clearInterval(clockId)
+    clearInterval(collectionInterval)
+    insert.classList.add("hidden")
+    big.classList.add("hidden")
+    directions.classList.remove("hidden")
+}
+
+function removeDirections() {
+    insert.classList.remove("hidden")
+    big.classList.remove("hidden")
+    directions.classList.add("hidden")
+    startGame()
+}
 function nameScreen() {
     let nameTemplate = ""
     nameTemplate +=
@@ -118,9 +135,20 @@ function nameScreen() {
 
 function startGame() {
     startInterval()
-    console.log(timerem)
+    setValues()
+    if (secrem < 10) {
+        document.getElementById("secrem").innerText = '0' + secrem.toString()
+    } else {
+        document.getElementById("secrem").innerText = secrem.toString()
+    }
+    document.getElementById("minrem").innerText = minrem.toString()
     startClock()
     gameScreen()
+}
+
+function setValues() {
+    minrem = Math.floor(timerem / 60000)
+    secrem = Math.floor((timerem % 60000) / 1000)
 }
 
 function startClock() {
@@ -129,14 +157,24 @@ function startClock() {
 }
 
 function drawClock() {
-    timerem -= 1000
-    document.getElementById("timerem").innerText = timerem.toString()
+    setValues()
+    if (secrem < 10) {
+        document.getElementById("secrem").innerText = '0' + secrem.toString()
+    } else {
+        document.getElementById("secrem").innerText = secrem.toString()
+    }
+    document.getElementById("minrem").innerText = minrem.toString()
     statusCheck()
+    timerem -= 1000
+    console.log(timerem)
+    console.log(minrem)
+    console.log(secrem)
 }
 
 function statusCheck() {
     if (timerem == 0) {
-        document.getElementById("timerem").innerText = timerem.toString()
+        document.getElementById("minrem").innerText = "0"
+        document.getElementById("secrem").innerText = "00"
         stopGame()
     } else if (totch >= chgoal) {
         timerem += 180000
@@ -531,7 +569,6 @@ function gameScreen() {
     playerNameElem.innerText = currentPlayer.name
     /*document.getElementById("insertion").innerHTML = gameTemplate;*/
     document.getElementById("large").innerHTML = gameTemplateLarge;
-    console.log(totch)
 }
 
 function mine() {
@@ -682,6 +719,8 @@ function setPlayer(event) {
 function stopGame() {
     clearInterval(collectionInterval)
     clearInterval(clockId)
+    document.getElementById("minrem").innerText = "0"
+    document.getElementById("secrem").innerText = "00"
     if (totch > currentPlayer.topScore) {
         currentPlayer.topScore = totch
         savePlayers()
@@ -707,11 +746,16 @@ function loadPlayers() {
 function closeScreen() {
     let highScoreTemplate = ""
     players.sort((p1, p2) => p2.topScore - p1.topScore)
-    players.forEach(player => {
+    let users = players.slice(0, 10)
+    users.forEach(player => {
         highScoreTemplate +=
             `<div class="row justify-content-center">
-            <span>${player.name}</span>
-            <span>${player.topScore}</span>
+            <div class="col-4 ml-4">
+            <h2>${player.name}</h2>
+            </div>
+            <div class="col-4 mr-4">
+            <h2>${player.topScore}</h2>
+            </div>
         </div>`
     })
     scoreboard.classList.remove("hidden")
