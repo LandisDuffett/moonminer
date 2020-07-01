@@ -24,7 +24,7 @@ button:focus, .btn.focus, .btn:focus {
 
 .headerfont {
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.4rem;
     margin-bottom: 0.2rem;
 }
 
@@ -160,17 +160,21 @@ hr {
 
 @media (min-width: 768px) {
 .banner {
-  font-size: 4em;
+  font-size: 2.5em;
 }
 
+.headerfont {
+    font-size: 1rem;
+}
 .moon {
     margin-bottom: 4rem;
 }
 
 .mouse {
     display: block;
-    max-height: 6rem;
-    max-width: 7rem;
+    max-height: 3rem;
+    max-width: 3rem;
+    margin-top: 2rem;
 }
 
 .panelmargin {
@@ -180,8 +184,21 @@ hr {
 }
 
 @media (min-width: 992px) {
+.banner {
+  font-size: 4rem;
+}
+
+
 .sub {
     margin-top: 0rem;
     margin-left: 2rem;
 }
+
+.mouse {
+    display: block;
+    max-height: 6rem;
+    max-width: 7rem;
+    margin-top: 0.5rem;
+}
+
 }
