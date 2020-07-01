@@ -129,8 +129,8 @@ function startClock() {
 }
 
 function drawClock() {
-    document.getElementById("timerem").innerText = timerem.toString()
     timerem -= 1000
+    document.getElementById("timerem").innerText = timerem.toString()
     statusCheck()
 }
 
