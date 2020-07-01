@@ -25,13 +25,13 @@ let autoUpgrades = {
 
 };
 
-//let timerem = 0;
-//let minrem = Math.floor(timerem / 60)
-//let secrem = timerem % 60
-//let totmin = 0;
-//let totsec = 0;
+let timerem = 0;
+let minrem = Math.floor(timerem / 60)
+let secrem = timerem % 60
+let totmin = 0;
+let totsec = 0;
 let totch = 990;
-//let chgoal = 0;
+let chgoal = 0;
 let pano = clickUpgrades.pickaxes.quantity;
 let cano = clickUpgrades.carts.quantity;
 let rono = autoUpgrades.rovers.quantity;
@@ -47,9 +47,9 @@ let caprice = clickUpgrades.carts.price;
 let roprice = autoUpgrades.rovers.price;
 let mbprice = autoUpgrades.mousebots.price;
 let collectionInterval = 0;
-//let currentPlayer = {}
+let currentPlayer = {}
 
-/*function welcomeScreen() {
+function welcomeScreen() {
     let welcomeTemplate = ""
     welcomeTemplate +=
         `<div class="row">
@@ -72,9 +72,9 @@ let collectionInterval = 0;
         </div>`
     document.getElementById("insertion").innerHTML = welcomeTemplate;
     document.getElementById("large").innerHTML = welcomeTemplate;
-}*/
+}
 
-/*function nameScreen() {
+function nameScreen() {
     let nameTemplate = ""
     nameTemplate +=
         `<div class="row justify-content-center align-items-center">
@@ -98,7 +98,7 @@ let collectionInterval = 0;
                     <span id="top-score"> </span>
                 </div>
                 <div class="row justify-content-center mt-2">
-                    <button class="btn btn-primary rounded" onclick="gameScreen()">Play</button>
+                    <button class="btn btn-primary rounded" onclick="startGame()">Play</button>
                 </div>
             </div>
         </div>
@@ -109,10 +109,16 @@ let collectionInterval = 0;
 </div>`
     document.getElementById("insertion").innerHTML = nameTemplate;
     document.getElementById("large").innerHTML = nameTemplate;
-}*/
+}
+
+function startGame() {
+    debugger
+    startInterval()
+    gameScreen()
+}
 
 function gameScreen() {
-    //let playerNameElem = document.getElementById("currentPlayer")
+    let playerNameElem = document.getElementById("currentPlayer")
     //let minElem = document.getElementById("timeremmin")
     //let secElem = document.getElementById("timeremsec")
     //let gameTemplate = ""
@@ -495,7 +501,7 @@ function gameScreen() {
     calcMultiplier()
     //minElem.innerText = minrem
     //secElem.innerText = secrem
-    //playerNameElem.innerText = currentPlayer.name
+    playerNameElem.innerText = currentPlayer.name
     /*document.getElementById("insertion").innerHTML = gameTemplate;*/
     document.getElementById("large").innerHTML = gameTemplateLarge;
 }
@@ -582,6 +588,7 @@ function startInterval() {
 }
 
 function autoMine() {
+    console.log("here!")
     if ((rono) && (!mbno)) {
         totch += (rono * 20)
     } else if ((mbno) && (!rono)) {
@@ -600,10 +607,10 @@ function calcMultiplier() {
     tcm = 1 + (pano * pamod) + (cano * camod)
 }
 
-//let players = []
-//loadPlayers()
+let players = []
+loadPlayers()
 
-/*function setPlayer(event) {
+function setPlayer(event) {
     event.preventDefault()
     let playerScoreElem = document.getElementById("top-score")
     let form = event.target
@@ -642,18 +649,18 @@ function calcMultiplier() {
 
     document.getElementById("insertion").innerHTML = nameTemplate;
     document.getElementById("large").innerHTML = nameTemplate;
-}*/
+}
 
-/*function savePlayers() {
+function savePlayers() {
     window.localStorage.setItem("players", JSON.stringify(players))
-}*/
+}
 
-/*function loadPlayers() {
+function loadPlayers() {
     let playersData = JSON.parse(window.localStorage.getItem("players"))
     if (playersData) {
         players = playersData
     }
-}*/
+}
 
 /*function stopGame() {
     if (totch > currentPlayer.topScore) {
@@ -703,6 +710,4 @@ function calcMultiplier() {
 }*/
 
 
-//welcomeScreen()
-startInterval()
-gameScreen()
+welcomeScreen()
