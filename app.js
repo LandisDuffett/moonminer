@@ -26,6 +26,8 @@ let autoUpgrades = {
 };
 
 let timerem = 0;
+let minrem = Math.floor(timerem / 60)
+let secrem = timerem % 60
 let totmin = 0;
 let totsec = 0;
 let totch = 990;
@@ -76,40 +78,43 @@ function nameScreen() {
     let nameTemplate = ""
     nameTemplate +=
         `<div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-8">
-                <div class="panel panel-default rounded bg-light panelmargin">
-                    <div class="panel-body p-3 text-center" style="font-family: 'Notable', sans-serif;">
-                        <div class="row justify-content-center m-1">
-                        <form onsubmit="setPlayer(event)">
+    <div class="col-12 col-md-8">
+        <div class="panel panel-default rounded bg-light panelmargin">
+            <div class="panel-body p-3 text-center">
+                <div class="row justify-content-center m-1">
+                    <form onsubmit="setPlayer(event)">
+                        <div>
                             <label for="name">
                                 <span>Player Name: </span></label>
-                        </div>
-                        <div class="row justify-content-center m-1">
                             <input type="text" name="playerName" required>
-                                <button class="btn btn-primary sub" type="submit">Ok</button>
-                            </form>
+                             <span>
+                            <button class="btn btn-primary ml-1 mb-2 sub" type="submit">Ok</button>
+                        </span>
                         </div>
-                          <div class="row justify-content-center mt-1">
-                            <span class="pr-2">Your High Score: </span>
-                            <span id="top-score">0</span>
-                        </div>
-                        <div class="row justify-content-center mt-2">
-                            <button class="btn btn-primary rounded" onclick="gameScreen()">Play</button>
-                        </div>
-                      
-                    </div>
+                    </form>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <span class="pr-2">Your High Score: </span>
+                    <span id="top-score"> </span>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button class="btn btn-primary rounded" onclick="gameScreen()">Play</button>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <img class="moon" src="moon.png" alt="">
-        </div>`
+    </div>
+</div>
+<div class="row justify-content-center align-items-center">
+    <img class="moon" src="moon.png" alt="">
+</div>`
     document.getElementById("insertion").innerHTML = nameTemplate;
     document.getElementById("large").innerHTML = nameTemplate;
 }
 
 function gameScreen() {
     let playerNameElem = document.getElementById("currentPlayer")
+    let minElem = document.getElementById("timeremmin")
+    let secElem = document.getElementById("timeremsec")
     let gameTemplate = ""
     let gameTemplateLarge = ""
     gameTemplate +=
@@ -174,9 +179,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">cart<img
-                                                        src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg"
-                                                        alt="">x5</p>
+                                                    <p class="mb-0">cart x5</p>
 
                                 </span>
                             </button>
@@ -328,9 +331,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                             <span class="tiny">
-                                                <p class="mb-0">cart<img
-                                                    src="https://img.icons8.com/android/24/000000/shopping-cart.png" class="svg"
-                                                    alt="">x 5</p>
+                                                <p class="mb-0">cart x 5</p>
 
                                 </span>
                             </button>
@@ -490,17 +491,121 @@ function gameScreen() {
                                     </div>
                                 </div>
                             </div>`
+    startInterval()
+    calcMultiplier()
+    minElem.innerText = minrem
+    secElem.innerText = secrem
     playerNameElem.innerText = currentPlayer.name
     document.getElementById("insertion").innerHTML = gameTemplate;
     document.getElementById("large").innerHTML = gameTemplateLarge;
+}
+
+function mine() {
+    if ((pano) && (!cano)) {
+        totch += 1 + pano
+    } else if ((cano) && (!pano)) {
+        totch += 1 + (cano * 5)
+    } else if ((cano) && (pano)) {
+        totch += 1 + pano + (cano * 5)
+    } else {
+        totch++
+    }
+    gameScreen();
+}
+
+function buyPickAxe() {
+    if (totch >= paprice) {
+        totch -= paprice;
+        clickUpgrades.pickaxes.quantity = pano + 1;
+        pano = clickUpgrades.pickaxes.quantity;
+        if (pano == 1) {
+            clickUpgrades.pickaxes.price = Math.round(paprice * 1.5);
+            paprice = clickUpgrades.pickaxes.price;
+        } else {
+            clickUpgrades.pickaxes.price = paprice * pano;
+            paprice = clickUpgrades.pickaxes.price;
+            update();
+        }
+    }
+}
+
+function buyCart() {
+    if (totch >= caprice) {
+        totch -= caprice;
+        clickUpgrades.carts.quantity = cano + 1;
+        cano = clickUpgrades.carts.quantity;
+        if (cano == 1) {
+            clickUpgrades.carts.price = Math.round(caprice * 1.5);
+            caprice = clickUpgrades.carts.price;
+        } else {
+            clickUpgrades.carts.price = caprice * cano;
+            caprice = clickUpgrades.carts.price;
+            update();
+        }
+    }
+}
+
+function buyRover() {
+    if (totch >= roprice) {
+        totch -= roprice;
+        autoUpgrades.mousebots.quantity = rono + 1;
+        rono = autoUpgrades.mousebots.quantity;
+        if (rono == 1) {
+            autoUpgrades.rovers.price = Math.round(roprice * 1.5);
+            roprice = autoUpgrades.rovers.price;
+        } else {
+            autoUpgrades.rovers.price = roprice * rono;
+            roprice = autoUpgrades.rovers.price;
+            update();
+        }
+    }
+}
+
+function buyMousebot() {
+    if (totch >= mbprice) {
+        totch -= mbprice;
+        autoUpgrades.mousebots.quantity = mbno + 1;
+        mbno = autoUpgrades.mousebots.quantity;
+        if (mbno == 1) {
+            autoUpgrades.mousebots.price = Math.round(mbprice * 1.5);
+            mbprice = autoUpgrades.mousebots.price;
+        } else {
+            autoUpgrades.mousebots.price = mbprice * mbno;
+            mbprice = autoUpgrades.mousebots.price;
+            update();
+        }
+    }
+}
+
+function startInterval() {
+    collectionInterval = setInterval(autoMine, 3000);
+}
+
+function autoMine() {
+    if ((rono) && (!mbno)) {
+        totch += (rono * 20)
+    } else if ((mbno) && (!rono)) {
+        totch += (mbno * 100)
+    } else if ((mbno) && (rono)) {
+        totch += (rono * 20) + (mbno * 100)
+    }
+    gameScreen()
+}
+
+function perSecond() {
+    cps = Math.round(((rono * romod) + (mbno * mbmod)) / 3)
+}
+
+function calcMultiplier() {
+    tcm = 1 + (pano * pamod) + (cano * camod)
 }
 
 let players = []
 loadPlayers()
 
 function setPlayer(event) {
-    debugger
     event.preventDefault()
+    let playerScoreElem = document.getElementById("top-score")
     let form = event.target
     let playerName = form.playerName.value
     currentPlayer = players.find(player => player.name == playerName)
@@ -509,8 +614,34 @@ function setPlayer(event) {
         players.push(currentPlayer)
         savePlayers()
     }
-    console.log(currentPlayer)
+    playerScoreElem.innerHTML = currentPlayer.topScore
     form.reset()
+    let nameTemplate = ""
+    nameTemplate +=
+        `<div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-8">
+        <div class="panel panel-default rounded bg-light panelmargin">
+            <div class="panel-body p-3 text-center" style="font-family: 'Notable', sans-serif;">
+                <div class="row justify-content-center m-1">
+                <span class="pr-2">Player Name: </span><span>${currentPlayer.name}</span>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <span class="pr-2">Your High Score: </span>
+                    <span>${currentPlayer.topScore}</span>
+                </div>
+                <div class="row justify-content-center mt-2">
+                    <button class="btn btn-primary rounded" onclick="gameScreen()">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center align-items-center">
+    <img class="moon" src="moon.png" alt="">
+</div>`
+
+    document.getElementById("insertion").innerHTML = nameTemplate;
+    document.getElementById("large").innerHTML = nameTemplate;
 }
 
 function savePlayers() {
@@ -532,6 +663,7 @@ function stopGame() {
     cheese = 0
     closeScreen()
 }
+
 function closeScreen() {
     let closeTemplate = ""
     let highScoreTemplate = ""
