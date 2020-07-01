@@ -45,6 +45,7 @@ let caprice = clickUpgrades.carts.price;
 let roprice = autoUpgrades.rovers.price;
 let mbprice = autoUpgrades.mousebots.price;
 let collectionInterval = 0;
+let currentPlayer = {}
 
 function welcomeScreen() {
     let welcomeTemplate = ""
@@ -79,7 +80,7 @@ function nameScreen() {
                 <div class="panel panel-default rounded bg-light panelmargin">
                     <div class="panel-body p-3 text-center" style="font-family: 'Notable', sans-serif;">
                         <div class="row justify-content-center m-1">
-                        <form id="player-form" onsubmit="setPlayer(event)">
+                        <form onsubmit="setPlayer(event)">
                             <label for="name">
                                 <span>Player Name: </span></label>
                         </div>
@@ -108,6 +109,7 @@ function nameScreen() {
 }
 
 function gameScreen() {
+    let playerNameElem = document.getElementById("currentPlayer")
     let gameTemplate = ""
     let gameTemplateLarge = ""
     gameTemplate +=
@@ -488,15 +490,84 @@ function gameScreen() {
                                     </div>
                                 </div>
                             </div>`
+    playerNameElem.innerText = currentPlayer.name
     document.getElementById("insertion").innerHTML = gameTemplate;
     document.getElementById("large").innerHTML = gameTemplateLarge;
 }
 
+let players = []
+loadPlayers()
+
+function setPlayer(event) {
+    debugger
+    event.preventDefault()
+    let form = event.target
+    let playerName = form.playerName.value
+    currentPlayer = players.find(player => player.name == playerName)
+    if (!currentPlayer) {
+        currentPlayer = { name: playerName, topScore: 0 }
+        players.push(currentPlayer)
+        savePlayers()
+    }
+    console.log(currentPlayer)
+    form.reset()
+}
+
+function savePlayers() {
+    window.localStorage.setItem("players", JSON.stringify(players))
+}
+
+function loadPlayers() {
+    let playersData = JSON.parse(window.localStorage.getItem("players"))
+    if (playersData) {
+        players = playersData
+    }
+}
+
+function stopGame() {
+    if (totch > currentPlayer.topScore) {
+        currentPlayer.topScore = totch
+        savePlayers()
+    }
+    cheese = 0
+    closeScreen()
+}
 function closeScreen() {
     let closeTemplate = ""
+    let highScoreTemplate = ""
     closeTemplate +=
-        ``
-    document.getElementById("insertion").innerHTML = closeTemplate;
+        `<div class="panel panel-default rounded bg-light panelmargin">
+                <div class="panel-body p-3 text-center">
+                <div class="row">
+                    <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: teal">
+                        <b>SHOCK WORKERS (High Scores)</b></h1>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span><h2>PLAYER</h2></span>
+                    </div>
+                    <div class="col-6">
+                        <span><h2>SCORE</h2></span>
+                    </div>
+                </div>
+                <div class="row" id="players">
+
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+                <img class="moon" src="moon.png" alt="">
+        </div>`
+    players.sort((p1, p2) => p2.topScore - p1.topScore)
+    players.forEach(player => {
+        highScoreTemplate += `
+        <div class="d-flex space-between">
+            <span>${player.name}</span>
+            <span>${player.topScore}</span>
+        </div>`
+    })
+    document.getElementById("insertion").innerHTML = closeTemplate1;
+    document.getElementById("players").innerHTML = highScoreTemplate;
 }
 
 
