@@ -17,6 +17,10 @@ button:focus, .btn.focus, .btn:focus {
     box-shadow: none !important;
 }
 
+.cheese {
+    margin-bottom: 4rem;
+    margin-right: 1rem;
+}
 .control-buttons {
   font-family: 'Notable', sans-serif;
   justify-content: center;

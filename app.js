@@ -29,6 +29,7 @@ let timerem = 0;
 let totmin = 0;
 let totsec = 0;
 let totch = 990;
+let chgoal = 0;
 let pano = clickUpgrades.pickaxes.quantity;
 let cano = clickUpgrades.carts.quantity;
 let rono = autoUpgrades.rovers.quantity;
@@ -109,18 +110,34 @@ function gameScreen() {
     gameTemplate +=
         `<div class="row align-items-center justify-content-center statfont">
             <div class="col-4 pl-4">
-                <p class="statfont mb-0">total cheese modifier:</p>
-                <p class="numfont text-center">${tcm}</p>
+                <div class="row text-center justify-content-center">
+                    <p class="statfont mb-0">total cheese modifier:</p>
+                    <p class="numfont">${tcm}</p>
+                </div>
+                <div class="row text-center justify-content-center">
+                    <p class="statfont mb-0">cheese per second:</p>
+                    <p class="numfont text-center"> ${cps}</p>
+                </div>
             </div>
             <div class="col-4">
                 <button class="bg-transparent border-0" onclick="mine()">
-                    <p class="statfont mb-0">cheese:</p>
-                    <p class="numfont mb-1">${totch}</p><img class="moon" src="moon.png" alt="">
+
+                    <img class="moon" src="moon.png" alt="">
         </button>
     </div>
-                <div class="col-4">
-                    <p class="statfont mb-0">cheese per second:</p>
-                    <p class="numfont text-center"> ${cps}</p>
+                <div class="col-4 space-around">
+                    <div class="row align-items-center">
+                        <p class="statfont mb-0 ml-2">cheese:</p>
+                        </div>
+                        <div class="row justify-content-center">
+                        <p class="numfont cheese">${totch}</p>
+                    </div>
+                    <div class="row text-center">
+                        <p class="statfont mb-0 ml-4">goal:</p>
+                        </div>
+                        <div class="row justify-content-center">
+                        <p class="numfont cheese">${chgoal}</p>
+                    </div>
                 </div>
             </div>
             <div class="row justify-content-center m-2">
