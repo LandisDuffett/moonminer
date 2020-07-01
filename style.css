@@ -42,6 +42,13 @@ hr {
 .margleft {
     margin-left: 0.8rem;
 }
+
+.minhigh {
+    min-height: 75vh;
+    max-width: 90%;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
 .minmarg {
     margin: 0.2rem;
 }
@@ -158,6 +165,12 @@ hr {
     font-weight: bold;
     color: black;
 }
+
+@media screen and (max-width: 991px) {
+    main#large {
+        display: none;
+    }
+}
 @media (min-width: 576px) {
 
 }
@@ -188,21 +201,36 @@ hr {
 }
 
 @media (min-width: 992px) {
+main#insertion {
+    display: none;
+}
+
 .banner {
   font-size: 4rem;
 }
 
-
+.cheese {
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
 .sub {
     margin-top: 0rem;
     margin-left: 2rem;
 }
-
+.moon {
+  max-width: 50vw; 
+  max-height: 50vh;
+  margin-bottom: 0.5rem;
+}
 .mouse {
     display: block;
     max-height: 6rem;
     max-width: 7rem;
     margin-top: 0.5rem;
+}
+
+.numfont {
+    font-size: 3rem;
 }
 
 }
