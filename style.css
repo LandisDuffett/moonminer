@@ -28,7 +28,7 @@ button:focus, .btn.focus, .btn:focus {
 
 .headerfont {
     color: white;
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     margin-bottom: 0.2rem;
 }
 
@@ -91,7 +91,7 @@ hr {
 
 .statfont {
     color: lightseagreen;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: 'Notable', sans-serif; 
 }
 
