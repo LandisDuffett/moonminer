@@ -184,11 +184,9 @@ function statusCheck() {
 
 function gameScreen() {
     let playerNameElem = document.getElementById("currentPlayer")
-    //let minElem = document.getElementById("timeremmin")
-    //let secElem = document.getElementById("timeremsec")
-    //let gameTemplate = ""
+    let gameTemplate = ""
     let gameTemplateLarge = ""
-    /*gameTemplate +=
+    gameTemplate +=
         `<div class="row align-items-center justify-content-center statfont">
             <div class="col-4 pl-4">
                 <div class="row text-center justify-content-center">
@@ -375,7 +373,7 @@ function gameScreen() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>`*/
+                            </div>`
     gameTemplateLarge +=
         `<div class="row">
             <div class="col-4">
@@ -564,10 +562,8 @@ function gameScreen() {
                             </div>`
     perSecond()
     calcMultiplier()
-    //minElem.innerText = minrem
-    //secElem.innerText = secrem
     playerNameElem.innerText = currentPlayer.name
-    /*document.getElementById("insertion").innerHTML = gameTemplate;*/
+    document.getElementById("insertion").innerHTML = gameTemplate;
     document.getElementById("large").innerHTML = gameTemplateLarge;
 }
 
