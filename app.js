@@ -25,13 +25,15 @@ let autoUpgrades = {
 
 };
 
-let timerem = 0;
-let minrem = Math.floor(timerem / 60)
-let secrem = timerem % 60
+let scoreboard = document.getElementById("here")
+let timerem = 8000;
+let minrem = Math.floor(timerem / 60000)
+let secrem = timerem % 60000
+let clockId = 0
 let totmin = 0;
 let totsec = 0;
-let totch = 990;
-let chgoal = 0;
+let totch = 0;
+let chgoal = 5000;
 let pano = clickUpgrades.pickaxes.quantity;
 let cano = clickUpgrades.carts.quantity;
 let rono = autoUpgrades.rovers.quantity;
@@ -48,8 +50,11 @@ let roprice = autoUpgrades.rovers.price;
 let mbprice = autoUpgrades.mousebots.price;
 let collectionInterval = 0;
 let currentPlayer = {}
+let insert = document.getElementById("insertion")
+let big = document.getElementById("large")
 
 function welcomeScreen() {
+    scoreboard.classList.add("hidden")
     let welcomeTemplate = ""
     welcomeTemplate +=
         `<div class="row">
@@ -112,9 +117,31 @@ function nameScreen() {
 }
 
 function startGame() {
-    debugger
     startInterval()
+    console.log(timerem)
+    startClock()
     gameScreen()
+}
+
+function startClock() {
+    drawClock()
+    clockId = setInterval(drawClock, 1000)
+}
+
+function drawClock() {
+    document.getElementById("timerem").innerText = timerem.toString()
+    timerem -= 1000
+    statusCheck()
+}
+
+function statusCheck() {
+    if (timerem == 0) {
+        document.getElementById("timerem").innerText = timerem.toString()
+        stopGame()
+    } else if (totch >= chgoal) {
+        timerem += 180000
+        chgoal *= 10
+    }
 }
 
 function gameScreen() {
@@ -504,6 +531,7 @@ function gameScreen() {
     playerNameElem.innerText = currentPlayer.name
     /*document.getElementById("insertion").innerHTML = gameTemplate;*/
     document.getElementById("large").innerHTML = gameTemplateLarge;
+    console.log(totch)
 }
 
 function mine() {
@@ -588,7 +616,6 @@ function startInterval() {
 }
 
 function autoMine() {
-    console.log("here!")
     if ((rono) && (!mbno)) {
         totch += (rono * 20)
     } else if ((mbno) && (!rono)) {
@@ -598,6 +625,7 @@ function autoMine() {
     }
     gameScreen()
 }
+
 
 function perSecond() {
     cps = Math.round(((rono * romod) + (mbno * mbmod)) / 3)
@@ -637,7 +665,7 @@ function setPlayer(event) {
                     <span>${currentPlayer.topScore}</span>
                 </div>
                 <div class="row justify-content-center mt-2">
-                    <button class="btn btn-primary rounded" onclick="gameScreen()">Play</button>
+                    <button class="btn btn-primary rounded" onclick="startGame()">Play</button>
                 </div>
             </div>
         </div>
@@ -651,6 +679,19 @@ function setPlayer(event) {
     document.getElementById("large").innerHTML = nameTemplate;
 }
 
+function stopGame() {
+    clearInterval(collectionInterval)
+    clearInterval(clockId)
+    if (totch > currentPlayer.topScore) {
+        currentPlayer.topScore = totch
+        savePlayers()
+    }
+    insert.classList.add("hidden")
+    big.classList.add("hidden")
+    totch = 0
+    closeScreen()
+}
+
 function savePlayers() {
     window.localStorage.setItem("players", JSON.stringify(players))
 }
@@ -662,52 +703,20 @@ function loadPlayers() {
     }
 }
 
-/*function stopGame() {
-    if (totch > currentPlayer.topScore) {
-        currentPlayer.topScore = totch
-        savePlayers()
-    }
-    cheese = 0
-    closeScreen()
-}*/
 
-/*function closeScreen() {
-    let closeTemplate = ""
+function closeScreen() {
     let highScoreTemplate = ""
-    closeTemplate +=
-        `<div class="panel panel-default rounded bg-light panelmargin">
-                <div class="panel-body p-3 text-center">
-                <div class="row">
-                    <h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: teal">
-                        <b>SHOCK WORKERS (High Scores)</b></h1>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <span><h2>PLAYER</h2></span>
-                    </div>
-                    <div class="col-6">
-                        <span><h2>SCORE</h2></span>
-                    </div>
-                </div>
-                <div class="row" id="players">
-
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-                <img class="moon" src="moon.png" alt="">
-        </div>`
     players.sort((p1, p2) => p2.topScore - p1.topScore)
     players.forEach(player => {
-        highScoreTemplate += `
-        <div class="d-flex space-between">
+        highScoreTemplate +=
+            `<div class="row justify-content-center">
             <span>${player.name}</span>
             <span>${player.topScore}</span>
         </div>`
     })
-    document.getElementById("insertion").innerHTML = closeTemplate1;
+    scoreboard.classList.remove("hidden")
     document.getElementById("players").innerHTML = highScoreTemplate;
-}*/
+}
 
 
 welcomeScreen()

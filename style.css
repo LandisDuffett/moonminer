@@ -33,6 +33,9 @@ button:focus, .btn.focus, .btn:focus {
     margin-bottom: 0.2rem;
 }
 
+.hidden {
+    display: none;
+}
 hr { 
     width:100%; 
     height:0.1px; 
