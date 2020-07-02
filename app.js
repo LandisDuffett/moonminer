@@ -67,7 +67,7 @@ function welcomeScreen() {
                         <b>MOON MINER</b></h1>It turns out the moon IS made of cheese. Mice are the first ones there to mine
                     all the cheese they can. Your job is to direct their massive project. Enter your name and start clicking on
                     the moon to get the cheese. Upgrade equipment at the store to multiply your yield. Some of the equipment will
-                    increase your cheese yield automatically. Don't get lazy, though. Keep any eye on the changing goal that you must meet every 3 minutes (which, for a mouse,
+                    increase your cheese yield automatically. Don't get lazy, though. Keep an eye on the changing goal that you must meet every 3 minutes (which, for a mouse,
                         is like a day to us). Click the directions and pause the clock at any time. Happy cheese mining.
                     <br>
                         <button class="btn btn-primary rounded mt-4" onclick="nameScreen()">Start</button>
@@ -116,11 +116,10 @@ function nameScreen() {
                     </form>
                 </div>
                 <div class="row justify-content-center mt-1">
-                    <span class="pr-2">Your High Score: </span>
+                    <span class="pr-2"></span>
                     <span id="top-score"> </span>
                 </div>
-                <div class="row justify-content-center mt-2">
-                    <button class="btn btn-primary rounded" onclick="startGame()">Play</button>
+                
                 </div>
             </div>
         </div>
@@ -240,7 +239,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                             <span class="tiny">
-                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">x2</p>
+                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">+1</p>
 
                                 </span>
                             </button>
@@ -248,7 +247,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">cart x5</p>
+                                                    <p class="mb-0">cart +5</p>
 
                                 </span>
                             </button>
@@ -257,7 +256,7 @@ function gameScreen() {
                                             <div class="row mb-2">
                                                 <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
                                                     <span class="tiny">
-                                                        <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x20</p>
+                                                        <p class="mb-0">rover<img src="rover.png" class="svg" alt="">+20</p>
 
                                 </span>
                             </button>
@@ -266,7 +265,7 @@ function gameScreen() {
                                                 <div class="row mb-2">
                                                     <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
                                                         <span class="tiny">
-                                                            <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">x100</p>
+                                                            <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">+100</p>
 
                                 </span>
                             </button>
