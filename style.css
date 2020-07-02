@@ -217,9 +217,24 @@ button:focus, .btn.focus, .btn:focus {
     margin: 4rem;
 }
 
-.svg3 {
+.svg {
+    max-height: 4vh;
+    max-width: 4vw;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.svg2 {
     max-height: 3vh;
-    max-width: 3vh;
+    max-width: 4vw;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+.svg3 {
+    max-height: 4vh;
+    max-width: 4vh;
     margin-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0rem;
@@ -302,8 +317,23 @@ main#insertion {
 }
 
 .numfont {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
+
+.svg {
+    max-height: 4vh;
+    max-width: 4vw;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.svg2 {
+    max-height: 3vh;
+    max-width: 4vw;
+    margin-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 
 .svg3 {
     max-height: 4vh;
@@ -315,4 +345,5 @@ main#insertion {
 .tiny {
     padding-left: 0;
 }
+
 }
