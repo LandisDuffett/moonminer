@@ -167,6 +167,7 @@ button:focus, .btn.focus, .btn:focus {
     max-width: 4vh;
     margin-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-bottom: 0.8rem;
 }
 .tiny {
     font-size: 0.9rem;
