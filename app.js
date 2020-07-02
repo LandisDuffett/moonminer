@@ -34,7 +34,7 @@ let clockId = 0
 let totmin = 0;
 let totsec = 0;
 let totch = 0;
-let chgoal = 5000;
+let chgoal = 1000;
 let pano = clickUpgrades.pickaxes.quantity;
 let cano = clickUpgrades.carts.quantity;
 let rono = autoUpgrades.rovers.quantity;
@@ -173,7 +173,7 @@ function statusCheck() {
         stopGame()
     } else if (totch >= chgoal) {
         timerem += 180000
-        chgoal *= 10
+        chgoal *= 5
     }
 }
 
