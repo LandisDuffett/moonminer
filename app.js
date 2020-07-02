@@ -27,7 +27,7 @@ let autoUpgrades = {
 
 let scoreboard = document.getElementById("here")
 let directions = document.getElementById("direct")
-let timerem = 10000;
+let timerem = 180000;
 let minrem = 0
 let secrem = 0
 let clockId = 0
@@ -82,7 +82,6 @@ function welcomeScreen() {
 }
 
 function getDirections() {
-    debugger
     clearInterval(clockId)
     clearInterval(collectionInterval)
     insert.classList.add("hidden")
@@ -165,9 +164,6 @@ function drawClock() {
     document.getElementById("minrem").innerText = minrem.toString()
     statusCheck()
     timerem -= 1000
-    console.log(timerem)
-    console.log(minrem)
-    console.log(secrem)
 }
 
 function statusCheck() {
@@ -247,7 +243,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">cart +5</p>
+                                                    <p class="mb-0">cart<img src="kart.png" class="svg3" alt="">+5</p>
 
                                 </span>
                             </button>
@@ -391,7 +387,7 @@ function gameScreen() {
                                 <div class="row mb-2">
                                     <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                         <span class="tiny">
-                                            <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">x 2</p>
+                                            <p class="pb-1">pick axe<img src="pick-axe.svg" class="svg3" alt="">+ 2</p>
 
                                 </span>
                             </button>
@@ -399,7 +395,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton" onclick="buyCart()">
                                             <span class="tiny">
-                                                <p class="mb-0">cart x 5</p>
+                                                <p class="pb-1">cart<img src="kart.png" class="svg3" alt="">+5</p>
 
                                 </span>
                             </button>
@@ -408,7 +404,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">x 20</p>
+                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">+ 20</p>
 
                                 </span>
                             </button>
@@ -417,7 +413,7 @@ function gameScreen() {
                                             <div class="row mb-2">
                                                 <button class="btn btn-info rounded smallbutton pl-0 mr-1 mbot" onclick="buyMousebot()">
                                                     <span class="tiny">
-                                                        <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">x 100</p>
+                                                        <p class="mb-0">mousebot<img src="mbot.png" class="svg2" alt="">+ 100</p>
 
                                 </span>
                             </button>
@@ -464,29 +460,35 @@ function gameScreen() {
         </div>
                                     <div class="row">
                                         <div class="col-3">
-                                            <div class="row justify-content-center">
-                                                <p class="statfont mb-0 ml-2 mt-0">cheese:</p>
-                                                <p class="numfont cheese">${totch}</p>
+                                            <div class="row justify-content-left">
+                                                <p class="statfont">cheese:</p>
+                                                </div>
+                                                <div class="row justify-content-left">
+                                                <p class="numfont">${totch}</p>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="row text-center">
-                                                <p class="statfont mb-0 ml-4 mt-0">goal:</p>
+                                            <div class="row justify-content-left">
+                                                <p class="statfont">goal:</p>
                                             </div>
-                                            <div class="row justify-content-center">
-                                                <p class="numfont cheese">0</p>
+                                            <div class="row justify-content-left">
+                                                <p class="numfont">${chgoal}</p>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="row text-center justify-content-center">
-                                                <p class="statfont mb-0 mt-0">total cheese modifier:</p>
+                                            <div class="row justify-content-left">
+                                                <p class="statfont mb-0">total cheese modifier:</p>
+                                            </div>
+                                            <div class="row justify-content-left">
                                                 <p class="numfont">${tcm}</p>
                                             </div>
                                         </div>
                                         <div class="col-3">
-                                            <div class="row text-center justify-content-center">
-                                                <p class="statfont mb-0 mt-0">cheese per second:</p>
-                                                <p class="numfont text-center"> ${cps}</p>
+                                            <div class="row justify-content-left">
+                                                <p class="statfont mb-0">cheese per second:</p>
+                                            </div>
+                                            <div class="row justify-content-left">
+                                                <p class="numfont"> ${cps}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -744,12 +746,12 @@ function closeScreen() {
     let users = players.slice(0, 10)
     users.forEach(player => {
         highScoreTemplate +=
-            `<div class="row justify-content-center">
+            `<div class="row justify-content-center highscorefont">
             <div class="col-4 ml-4">
-            <h2>${player.name}</h2>
+            <p>${player.name}</p>
             </div>
             <div class="col-4 mr-4">
-            <h2>${player.topScore}</h2>
+            <p>${player.topScore}</p>
             </div>
         </div>`
     })

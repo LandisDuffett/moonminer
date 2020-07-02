@@ -36,12 +36,11 @@ button:focus, .btn.focus, .btn:focus {
 .hidden {
     display: none;
 }
-hr { 
-    width:100%; 
-    height:0.1px; 
-    background: #000;
-    margin: 1; 
+
+.highscorefont {
+    font-size: 0.8rem;
 }
+
 
 .margleft {
     margin-left: 0.8rem;
@@ -72,13 +71,18 @@ hr {
     padding-left: 0.1rem;
 }
 .numfont {
-    color: lightgoldenrodyellow
+    color: lightgoldenrodyellow;
+    font-size: 1rem;
 }
 .padleft {
     padding-left: 2rem!important;
 }
 .panelmargin {
    margin: 2rem;
+}
+
+.scoreboardfont {
+    font-size: 1rem;
 }
 
 .smallbutton {
@@ -217,6 +221,38 @@ hr {
     max-width: 3vh;
     margin-left: 0.5rem;
     padding-right: 0.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0.5rem
+}
+
+.storenum1 {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-left: 1.5rem;
+}
+
+.storenum2 {
+    margin-top: 1.2rem;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+    margin-left: 1.5rem;
+}
+
+.storenum3 {
+    margin-top: 1.6rem;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+    margin-left: 1.5rem;
+}
+.storenum4 {
+    margin-top: 1.55rem;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-left: 0.6rem;
+    margin-left: 1.5rem;
 }
 }
 
@@ -231,12 +267,23 @@ main#insertion {
 
 .cheese {
     margin-bottom: 0;
-    margin-top: 1.3rem;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .cheesebot {
     margin-bottom: 0;
 }
+
+.highscorefont {
+    font-size: 2rem;
+}
+
+.scoreboardfont {
+    font-size: 4rem;
+}
+
 .sub {
     margin-top: 0rem;
     margin-left: 2rem;
@@ -254,7 +301,7 @@ main#insertion {
 }
 
 .numfont {
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 .svg3 {
