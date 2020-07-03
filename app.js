@@ -191,7 +191,7 @@ function statusCheck() {
         stopGame()
     } else if (totch >= chgoal) {
         timerem += 180000
-        chgoal *= 5
+        chgoal *= 3
     }
 }
 
