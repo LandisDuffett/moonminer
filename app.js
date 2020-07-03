@@ -732,6 +732,7 @@ function setPlayer(event) {
 }
 
 function stopGame() {
+    directions.classList.add("hidden")
     clearInterval(collectionInterval)
     clearInterval(clockId)
     document.getElementById("minrem").innerText = "0"
