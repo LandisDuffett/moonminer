@@ -684,7 +684,7 @@ function perSecond() {
 }
 
 function calcMultiplier() {
-    tcm = 1 + (pano * pamod) + (cano * camod)
+    tcm = (pano * pamod) + (cano * camod)
 }
 
 let players = []
