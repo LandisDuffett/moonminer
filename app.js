@@ -25,6 +25,7 @@ let autoUpgrades = {
 
 };
 
+let level = 0
 let scoreboard = document.getElementById("here")
 let directions = document.getElementById("direct")
 let timerem = 180000;
@@ -90,12 +91,28 @@ function getDirections() {
 }
 
 function removeDirections() {
-    insert.classList.remove("hidden")
-    big.classList.remove("hidden")
-    directions.classList.add("hidden")
-    startGame()
+    debugger
+    if (level == 0) {
+        insert.classList.remove("hidden")
+        big.classList.remove("hidden")
+        directions.classList.add("hidden")
+        welcomeScreen()
+    } else if (level == 1) {
+        insert.classList.remove("hidden")
+        big.classList.remove("hidden")
+        directions.classList.add("hidden")
+        nameScreen()
+    } else {
+        insert.classList.remove("hidden")
+        big.classList.remove("hidden")
+        directions.classList.add("hidden")
+        startGame()
+    }
+
 }
+
 function nameScreen() {
+    level = 1
     let nameTemplate = ""
     nameTemplate +=
         `<div class="row justify-content-center align-items-center">
@@ -132,6 +149,7 @@ function nameScreen() {
 }
 
 function startGame() {
+    level = 2
     startInterval()
     setValues()
     if (secrem < 10) {
