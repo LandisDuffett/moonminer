@@ -607,6 +607,7 @@ function buyPickAxe() {
         if (pano == 1) {
             clickUpgrades.pickaxes.price = Math.round(paprice * 1.5);
             paprice = clickUpgrades.pickaxes.price;
+            gameScreen();
         } else {
             clickUpgrades.pickaxes.price = paprice * pano;
             paprice = clickUpgrades.pickaxes.price;
@@ -623,6 +624,7 @@ function buyCart() {
         if (cano == 1) {
             clickUpgrades.carts.price = Math.round(caprice * 1.5);
             caprice = clickUpgrades.carts.price;
+            gameScreen();
         } else {
             clickUpgrades.carts.price = caprice * cano;
             caprice = clickUpgrades.carts.price;
@@ -639,6 +641,7 @@ function buyRover() {
         if (rono == 1) {
             autoUpgrades.rovers.price = Math.round(roprice * 1.5);
             roprice = autoUpgrades.rovers.price;
+            gameScreen();
         } else {
             autoUpgrades.rovers.price = roprice * rono;
             roprice = autoUpgrades.rovers.price;
@@ -655,6 +658,7 @@ function buyMousebot() {
         if (mbno == 1) {
             autoUpgrades.mousebots.price = Math.round(mbprice * 1.5);
             mbprice = autoUpgrades.mousebots.price;
+            gameScreen();
         } else {
             autoUpgrades.mousebots.price = mbprice * mbno;
             mbprice = autoUpgrades.mousebots.price;
