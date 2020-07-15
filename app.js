@@ -91,7 +91,6 @@ function getDirections() {
 }
 
 function removeDirections() {
-    debugger
     if (level == 0) {
         insert.classList.remove("hidden")
         big.classList.remove("hidden")
