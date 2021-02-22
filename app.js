@@ -252,7 +252,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                             <span class="tiny">
-                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">+1</p>
+                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">+2</p>
 
                                 </span>
                             </button>
