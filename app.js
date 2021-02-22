@@ -252,7 +252,7 @@ function gameScreen() {
                                     <div class="row mb-2">
                                         <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                             <span class="tiny">
-                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">+2</p>
+                                                <p>pick axe<img src="pick-axe.svg" class="svg3" alt="">+1</p>
 
                                 </span>
                             </button>
@@ -404,7 +404,7 @@ function gameScreen() {
                                 <div class="row mb-2">
                                     <button class="btn btn-info rounded smallbutton pl-1" onclick="buyPickAxe()">
                                         <span class="tiny">
-                                            <p class="pb-1">pick axe<img src="pick-axe.svg" class="svg3" alt="">+ 2</p>
+                                            <p class="pb-1">pick axe<img src="pick-axe.svg" class="svg3" alt="">+1</p>
 
                                 </span>
                             </button>
@@ -421,7 +421,7 @@ function gameScreen() {
                                         <div class="row mb-2">
                                             <button class="btn btn-info rounded smallbutton" onclick="buyRover()">
                                                 <span class="tiny">
-                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">+ 20</p>
+                                                    <p class="mb-0">rover<img src="rover.png" class="svg" alt="">+20</p>
 
                                 </span>
                             </button>
