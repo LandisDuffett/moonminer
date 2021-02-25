@@ -60,7 +60,8 @@ function welcomeScreen() {
     directions.classList.add("hidden")
     let welcomeTemplate = ""
     welcomeTemplate +=
-        `<div class="row">
+        /*html*/`
+        <div class="row">
             <div class="panel panel-default rounded bg-light panelmargin">
                 <div class="panel-body p-3 text-center">
                     <h4>Welcome to</h4>
@@ -73,10 +74,10 @@ function welcomeScreen() {
                     <br>
                         <button class="btn btn-primary rounded mt-4" onclick="nameScreen()">Start</button>
                 </div>
-                </div>
             </div>
-            <div class="row justify-content-center align-items-center">
-                    <img class="moon" src="moon.png" alt="">
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <img class="moon" src="moon.png" alt="">
         </div>`
     document.getElementById("insertion").innerHTML = welcomeTemplate;
     document.getElementById("large").innerHTML = welcomeTemplate;
@@ -113,8 +114,8 @@ function removeDirections() {
 function nameScreen() {
     level = 1
     let nameTemplate = ""
-    nameTemplate +=
-        `<div class="row justify-content-center align-items-center">
+    nameTemplate += /*html*/ `
+<div class="row justify-content-center align-items-center">
     <div class="col-12 col-md-8">
         <div class="panel panel-default rounded bg-light panelmargin">
             <div class="panel-body p-3 text-center">
@@ -198,8 +199,8 @@ function gameScreen() {
     let playerNameElem = document.getElementById("currentPlayer")
     let gameTemplate = ""
     let gameTemplateLarge = ""
-    gameTemplate +=
-        `<div class="row align-items-center justify-content-center statfont">
+    gameTemplate += /*html*/ `
+        <div class="row align-items-center justify-content-center statfont">
             <div class="col-4 pl-4">
                 <div class="row text-center justify-content-center">
                     <p class="statfont mb-0">total cheese modifier:</p>
@@ -386,8 +387,8 @@ function gameScreen() {
                                     </div>
                                 </div>
                             </div>`
-    gameTemplateLarge +=
-        `<div class="row">
+    gameTemplateLarge += /*html*/ `
+        <div class="row">
             <div class="col-4">
                 <div class="panel panel-default rounded bg-light minhigh">
                     <div class="panel-body p-3 text-center">
@@ -707,13 +708,13 @@ function setPlayer(event) {
     playerScoreElem.innerHTML = currentPlayer.topScore
     form.reset()
     let nameTemplate = ""
-    nameTemplate +=
-        `<div class="row justify-content-center align-items-center">
+    nameTemplate += /*html*/ `
+<div class="row justify-content-center align-items-center">
     <div class="col-12 col-md-8">
         <div class="panel panel-default rounded bg-light panelmargin">
             <div class="panel-body p-3 text-center" style="font-family: 'Notable', sans-serif;">
                 <div class="row justify-content-center m-1">
-                <span class="pr-2">Player Name: </span><span>${currentPlayer.name}</span>
+                    <span class="pr-2">Player Name: </span><span>${currentPlayer.name}</span>
                 </div>
                 <div class="row justify-content-center mt-1">
                     <span class="pr-2">Your High Score: </span>
